@@ -2,6 +2,9 @@ AWSTemplateFormatVersion: "2010-09-09"
 
 Description: Shared VPC Template - Cross-stack references.
 
+Metadata:
+  Author: "Mohsin Sheikhani"
+
 Parameters:
   AvailabilityZones:
     Type: List<AWS::EC2::AvailabilityZone::Name>
@@ -114,3 +117,8 @@ Outputs:
     Value: !Ref VPCPrivateSubnet2
     Export:
       Name: shared-vpc-PrivateSubnet2
+
+  VPCPrivateSubnet2RouteTable:
+    Value: !Ref VPCPrivateSubnet2RouteTable
+    Export:
+      Name: shared-vpc-VPCPrivateSubnet2RouteTable
